@@ -3,9 +3,11 @@ int led = D7;
 void messegeReceived(const char *event, const char *data){
 
     String temp = String(data);
+
+    Serial.println(temp);
     
     if (temp == "wave"){
-        
+    
         digitalWrite(led,HIGH);
         delay(1000);
         digitalWrite(led,LOW);
@@ -39,9 +41,6 @@ void messegeReceived(const char *event, const char *data){
         // delay(100);
     }
     
-
-
-    
 }
 
 void setup(){
@@ -55,3 +54,4 @@ void setup(){
 void loop() {
 
 }
+
