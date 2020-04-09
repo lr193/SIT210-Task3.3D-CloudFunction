@@ -1,24 +1,46 @@
 int led = D7;
 
 void messegeReceived(const char *event, const char *data){
+
+    String temp = String(data);
     
-    Serial.println("Wave Received");
+    if (temp == "wave"){
+        
+        digitalWrite(led,HIGH);
+        delay(1000);
+        digitalWrite(led,LOW);
+        delay(100);
+        
+        digitalWrite(led,HIGH);
+        delay(1000);
+        digitalWrite(led,LOW);
+        delay(100);
+        
+        digitalWrite(led,HIGH);
+        delay(1000);
+        digitalWrite(led,LOW);
+        // delay(100);
+    }
+    else if ( temp == "pat"){
+        
+        digitalWrite(led,HIGH);
+        delay(200);
+        digitalWrite(led,LOW);
+        delay(100);
+        
+        digitalWrite(led,HIGH);
+        delay(200);
+        digitalWrite(led,LOW);
+        delay(100);
+        
+        digitalWrite(led,HIGH);
+        delay(200);
+        digitalWrite(led,LOW);
+        // delay(100);
+    }
     
 
-    digitalWrite(led,HIGH);
-    delay(1000);
-    digitalWrite(led,LOW);
-    delay(100);
-    
-    digitalWrite(led,HIGH);
-    delay(1000);
-    digitalWrite(led,LOW);
-    delay(100);
-    
-    digitalWrite(led,HIGH);
-    delay(1000);
-    digitalWrite(led,LOW);
-    // delay(100);
+
     
 }
 
@@ -33,4 +55,3 @@ void setup(){
 void loop() {
 
 }
-
